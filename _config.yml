@@ -5,10 +5,10 @@ url: "https://appetizermonster.github.io" # the base hostname & protocol for you
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: Heejin's writings
   avatar: avatar.png
   gravatar: # Email MD5 hash
-  description: "Heejin's devlog" # used by search engines
+  description: "Heejin's writings" # used by search engines
 
   # Header and footer text
   header_text:
