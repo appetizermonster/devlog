@@ -220,6 +220,7 @@ hr {
 
 pre {
   overflow: auto;
+  padding: 16px;
 }
 
 /**
@@ -230,7 +231,7 @@ code,
 kbd,
 pre,
 samp {
-  background: rgba(56,56,56,0.5);
+  background: #f6f8fa;
   font-family: monospace, monospace;
   font-size: 1em;
 }
