@@ -6,7 +6,7 @@ url: "https://appetizermonster.github.io" # the base hostname & protocol for you
 theme_settings:
   # Meta
   title: Heejin's writings
-  avatar: avatar.png
+  avatar: avatar.jpg
   gravatar: # Email MD5 hash
   description: "Heejin's writings" # used by search engines
 
