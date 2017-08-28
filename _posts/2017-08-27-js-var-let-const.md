@@ -3,30 +3,172 @@ layout: post
 title: JavaScript - var, let, const
 ---
 
-ES5 이전의 JavaScript에서는 변수를 선언하기 위해서 `var` 키워드만을 사용했다.  
-그런데 ES6(2015) 이후의 JavaScript에서는 변수 선언을 위한 키워드 두 개가 추가되었다. `let`과 `const` 키워드이다.
+As you know, There was only `var` keyword for variable delcaration before ES2015. but Modern JavaScript have introduced `let` and `const` keywords for it.  
+So let's figure out the differences between `var` and the others.
 
-## const
+## Function Scoped
 
-`const` 키워드를 사용한 변수 선언의 특징은 아래 예제처럼 비교적 명확하다.
+JavaScript's `var` has slightly different scope than any other programming languages. and it's called `Function Scope`.  
 
-```javascript
-const a = 'A';
-
-a = 'B'; // 에러!
-```
-
-`const`를 이용해서 변수를 선언하면 그 변수를 더 이상 수정할 수 없게 된다.  
-정확히는 assignment만 금지되므로, 아래와 같은 작업은 가능하다.
+the following examples are all properly working JavaScript codes.
 
 ```javascript
-const a = [];
-const b = {};
-
-a.push(0);       // OKAY!
-b['new'] = 'a';  // OKAY!
+function a() {
+  if (true) {
+    var a = 10;
+  }
+  console.log(a); // prints 10
+}
 ```
 
-위 예제들을 통해서 `const`에 대해서는 쉽게 이해할 수 있게 되었다. 하지만 `let`은 무슨 목적으로 만들어진걸까?  
+```javascript
+function b() {
+  for (var i = 0; i < 10; i++) {
+    var k = '99';
+  }
+  console.log(k); // prints '99' 
+}
+```
 
-[WIP]
+You may feel it's something strange. but above codes are all properly working codes becauseof `Function Scope`.
+
+With `Function Scope`, All variable declarations inside `Function` are all alive along with `Function`.
+
+## Hoisting
+
+Here is one more strange rule which `var` has called `Hoisting`. (Personally, I couldn't understand why Hoisting was needed for JavaScript)
+
+These examples are all properly working JavaScripts.
+
+```javascript
+function a() {
+  a = 10;
+  console.log(a); // prints 10
+
+  var a;
+}
+```
+
+```javascript
+function b() {
+  b = 100;
+
+  if (false) {
+    var b;    // even this code will not be evaluated, you can delcare a variable like this
+  }
+
+  console.log(b); // prints 100
+}
+```
+
+Basically, JavaScript Parser parses the function and finds out all `var` variable declarations and moves it to the top of the function.
+and this feature is called `Hoisting`.
+
+So above function `b` can be converted like this:
+
+```javascript
+function b() {
+  var b;
+  b = 100;
+
+  if (false) {
+  }
+
+  console.log(b);
+}
+```
+
+## and `let`
+
+All those weird language features makes ES2015(ES6) to do introduce the `let` keyword.
+
+`let` has following differences compare to `var`:
+
+- `Block Scoped`
+- No more `Hoisting`
+
+Then, Let's figure out more about these differences.
+
+### Block Scoped
+
+With `let`, the following examples are no more working like the examples with `var`.
+
+```javascript
+function aa() {
+  if (true) {
+    let a = 10;
+  }
+  console.log(a); // a is not defined
+}
+```
+
+```javascript
+function bb() {
+  for (let i = 0; i < 10; i++) {
+    let k = '99';
+  }
+  console.log(k); // k is not defined
+}
+```
+
+because `let` is `Block Scoped`, variables using `let` will only be alive for the block (`{` `}`) that variable was declared.
+
+and I think this is more understandable rule than `Function Scoped`.
+
+### No more Hoisting
+
+`let` has no more hoisting rule. So the following example is no more working with `let` variables.
+
+```javascript
+function a() {
+  a = 10;         // a is not defined
+  console.log(a);
+
+  let a;
+}
+```
+
+I think Hoisting only makes confusion and can make chaos code.
+with `let` variables, Now you can make more stable and safe JavaScript codes.
+
+## Then... What is `const`?
+
+In Programming, all **mutable** variables can be considered as **evil**. because it changes program state and and many mutable variables makes it impossible to track the state you are changing.
+
+So Basically, we need to make variables immutable as possible. `const` keyword is needed for it.
+
+It's like a `let` keyword, but when you assign the variable once, you can't re-assign the variable.
+
+```javascript
+function a() {
+  const x = 10;
+
+  x = 100; // Error!
+}
+```
+
+like the above example, you can't re-assign the `const` variable. and `const` must be declared with initial assignment.
+
+```javascript
+function b() {
+  const x; // Error!
+  x = 100;
+}
+```
+
+You can use `const` keyword for variables that only needs one assignment. you can treat the `const` variables as immutable.
+
+`const` keyword allows you to create more maintainable code. So I personally recommend to use it as many as possible. 
+
+## Conclusion
+
+- `var`: Function Scoped, Hoisting
+- `let`: Block Scoped, No Hoisting
+- `const`: `let` + immutable
+
+## References
+
+- https://developer.mozilla.org/ko/docs/Glossary/Hoisting
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
