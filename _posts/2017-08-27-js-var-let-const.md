@@ -32,7 +32,7 @@ function b() {
 
 You may feel it's something strange. but above codes are all properly working codes becauseof `Function Scope`.
 
-With `Function Scope`, All variable declarations inside `Function` are all alive along with `Function`.
+With `Function Scope`, All variable declarations inside `Function` are all alive along with the function that variables was declared.
 
 ## Hoisting
 
