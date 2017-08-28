@@ -27,7 +27,7 @@ theme_settings:
   github: "appetizermonster"
   google_plus:
   instagram:
-  linkedin:  # Full URL
+  linkedin: "https://www.linkedin.com/in/heejin-lee-57373077/"
   pinterest:
   reddit:
   soundcloud:
@@ -39,7 +39,7 @@ theme_settings:
   youtube:
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: "UA-105436752-1" # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname: heejins-blog
   muut_community_name: # From muut.com settings, e.g. "muttcommunityname"
   katex: true # Enable if using math markup
