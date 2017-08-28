@@ -168,7 +168,7 @@ You can use `const` keyword for variables that only needs one assignment. you ca
 
 ## References
 
-- https://developer.mozilla.org/ko/docs/Glossary/Hoisting
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+- [https://developer.mozilla.org/ko/docs/Glossary/Hoisting](https://developer.mozilla.org/ko/docs/Glossary/Hoisting)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
