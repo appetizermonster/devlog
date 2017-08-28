@@ -13,6 +13,6 @@ Before several days, I found a interesting lecture about how to be good at learn
 
 If you have interest in learning how to learn, checkout this amazing lecture! it will gives you some hints about how to be good at learning.
 
-![]({{ site.url }}/assets/learning-how-to-learn.png)
+![]({{ site.baseurl }}/assets/learning-how-to-learn.png)
 
 - [Link to Learning How to Learn Course](https://www.coursera.org/learn/learning-how-to-learn/home/welcome)
