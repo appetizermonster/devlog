@@ -133,7 +133,7 @@ with `let` variables, Now you can make more stable and safe JavaScript codes.
 
 ## Then... What is `const`?
 
-In Programming, all **mutable** variables can be considered as **evil**. because it changes program state and and many mutable variables makes it impossible to track the state you are changing.
+In Programming, all **mutable** variables can be considered as **evil**. because it changes program state and many mutable variables makes it impossible to track the state you are changing.
 
 So Basically, we need to make variables immutable as possible. `const` keyword is needed for it.
 
