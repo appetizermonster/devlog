@@ -4,7 +4,6 @@ title: Learning How to Learn
 ---
 
 For recent years, I was always wanted to learn new things. but it was not easy to get good at something.
-
 I needed some tools help me learn something quickly. but I couldn't easily find these tools.
 
 The only one thing that i could realize was that practice makes perfect.
