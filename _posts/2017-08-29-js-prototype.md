@@ -80,4 +80,4 @@ the following figure is describing the prototype relations for the example:
 ## Summary
 
 - **Prototype Object**: a Special plain object on all Function objects
-- **Prototype Link**: a Link to the Prototype Object on all objects.
+- **Prototype Link**: a Link to the Prototype Object on all objects
