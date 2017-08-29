@@ -73,7 +73,7 @@ In the example, when you call a `say` function on `dog` object. JavaScript engin
 
 And finding the calling function can be following multiple prototype links, it's called **Prototype Chain**.
 
-the following figure is describing the prototype relations for the example:
+the following figure is describing the prototype relations for the above example:
 
 ![]({{ site.baseurl }}/assets/js-prototype-figure.png){: .center}
 
@@ -81,3 +81,7 @@ the following figure is describing the prototype relations for the example:
 
 - **Prototype Object**: a Special plain object on all Function objects
 - **Prototype Link**: a Link to the Prototype Object on all objects
+
+## References
+
+- [JavaScript Patterns by Stoyan Stefanov](http://shop.oreilly.com/product/9780596806767.do)
