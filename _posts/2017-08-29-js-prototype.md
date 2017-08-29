@@ -66,7 +66,7 @@ Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 
 var dog = new Dog();
-dog.say(); // call Animal.prototype.say with `dog` context, prints 'This is dog'
+dog.say(); // call Animal.prototype.say with 'dog' context, prints 'This is dog'
 ```
 
 In the example, when you call a `say` function on `dog` object. JavaScript engine will find `say` function on the `dog` object first, and if can't find it then it will find the function on the its `__proto__` object, and so on. and finally the found function is called with `dog` object context. (its like: `Dog.__proto__.say.call(dog);`)
