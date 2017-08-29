@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript - Object.create in Classical Inheritance
+date: 2017-08-29 17:00:00 +0900
 ---
 
 You've probably seen the `Object.create` pattern was used to mimic `Class`ical inheritance in JavaScript ES5 such as:

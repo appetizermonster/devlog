@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Learning How to Learn
+date: 2017-08-29 00:00:00 +0900
 ---
 
 For recent years, I was always wanted to learn new things. but it was not easy to get good at something.

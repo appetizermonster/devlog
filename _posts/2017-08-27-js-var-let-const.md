@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript - var, let, const
+date: 2017-08-27 00:00:00 +0900
 ---
 
 As you know, There was only `var` keyword for variable delcaration before ES2015. but Modern JavaScript have introduced `let` and `const` keywords for it.  
