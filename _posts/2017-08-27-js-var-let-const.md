@@ -129,7 +129,7 @@ function a() {
 }
 ```
 
-In **Temporal Dead Zone** semantics, you can't access the variable which hasn't initialized. so a `let` variable declaration still be hoisted, but it works like its not hoisted.
+In **Temporal Dead Zone** semantics, you can't access the variable which hasn't been initialized. so a `let` variable declaration still be hoisted, but it works like its not hoisted.
 
 I think simple hoisting only makes codes hard to maintain.
 with `let` variables, Now you can make more easier to maintain JavaScript codes.
