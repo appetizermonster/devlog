@@ -9,16 +9,16 @@ So let's figure out the differences between `var` and the others.
 
 ## Function Scoped
 
-JavaScript's `var` has slightly different scope than any other programming languages. and it's called `Function Scope`.  
+JavaScript's `var` has slightly different scope than any other programming languages. and it's called **Function Scope**.  
 
 the following examples are all properly working JavaScript codes.
 
 ```javascript
 function a() {
   if (true) {
-    var a = 10;
+    var x = 10;
   }
-  console.log(a); // prints 10
+  console.log(x); // prints 10
 }
 ```
 
@@ -31,51 +31,51 @@ function b() {
 }
 ```
 
-You may feel it's something strange. but above codes are all properly working codes becauseof `Function Scope`.
+You may feel it's something strange. but above codes are all properly working codes becauseof **Function Scope**.
 
-With `Function Scope`, All variable declarations inside function are all alive along with the function that variables was declared.
+With **Function Scope**, All variable declarations inside function are all alive along with the function that variables was declared.
 
 ## Hoisting
 
-Here is one more strange rule which `var` has called `Hoisting`. (Personally, I couldn't understand why Hoisting was needed for JavaScript)
+Here is one more strange rule which `var` has called **Hoisting**. (Personally, I couldn't understand why Hoisting was needed for JavaScript)
 
 These examples are all properly working JavaScripts.
 
 ```javascript
 function a() {
-  a = 10;
-  console.log(a); // prints 10
+  x = 10;
+  console.log(x); // prints 10
 
-  var a;
+  var x;
 }
 ```
 
 ```javascript
 function b() {
-  b = 100;
+  y = 100;
 
   if (false) {
-    var b;    // even this code will not be evaluated, you can delcare a variable like this
+    var y;    // even this code will not be evaluated, you can delcare a variable like this
   }
 
-  console.log(b); // prints 100
+  console.log(y); // prints 100
 }
 ```
 
 Basically, JavaScript Parser parses the function and finds out all `var` variable declarations and moves it to the top of the function.
-and this feature is called `Hoisting`.
+and this feature is called **Hoisting**.
 
-So above function `b` can be converted like this:
+So the above function `b` can be converted like this:
 
 ```javascript
 function b() {
-  var b;
-  b = 100;
+  var y;
+  y = 100;
 
   if (false) {
   }
 
-  console.log(b);
+  console.log(y);
 }
 ```
 
@@ -85,8 +85,8 @@ All those weird language features makes ES2015(ES6) to do introduce the `let` ke
 
 `let` has following differences compare to `var`:
 
-- `Block Scoped`
-- No more `Hoisting`
+- **Block Scoped**
+- **Hoisting** but with **Temporal Dead Zone**
 
 Then, Let's figure out more about these differences.
 
@@ -97,9 +97,9 @@ With `let`, the following examples are no more working like the examples with `v
 ```javascript
 function aa() {
   if (true) {
-    let a = 10;
+    let x = 10;
   }
-  console.log(a); // a is not defined
+  console.log(x); // a is not defined
 }
 ```
 
@@ -112,25 +112,27 @@ function bb() {
 }
 ```
 
-because `let` is `Block Scoped`, variables using `let` will only be alive for the block (`{` `}`) that variable was declared.
+because `let` is **Block Scoped**, variables using `let` will only be alive for the block (`{` `}`) that variable was declared.
 
-and I think this is more understandable rule than `Function Scoped`.
+and I think this is more understandable rule than **Function Scoped**.
 
-### No more Hoisting
+### Temporal Dead Zone
 
-`let` has no more hoisting rule. So the following example is no more working with `let` variables.
+`let` is still hoisted like `var` but the additional rule called **Temporal Dead Zone** has been added. So the following example is no more working with `let` variables.
 
 ```javascript
 function a() {
-  a = 10;         // a is not defined
-  console.log(a);
+  x = 10;         // a is not defined
+  console.log(x);
 
-  let a;
+  let x;
 }
 ```
 
-I think Hoisting only makes confusion and can make chaos code.
-with `let` variables, Now you can make more stable and safe JavaScript codes.
+In **Temporal Dead Zone** semantics, you can't access the variable which hasn't initialized. so a `let` variable declaration still be hoisted, but it works like its not hoisted.
+
+I think simple hoisting only makes codes hard to maintain.
+with `let` variables, Now you can make more easier to maintain JavaScript codes.
 
 ## Then... What is `const`?
 
@@ -138,7 +140,8 @@ In Programming, all **mutable** variables can be considered as **evil**. because
 
 So Basically, we need to make variables immutable as possible. `const` keyword is needed for it.
 
-It's like a `let` keyword, but when you assign the variable once, you can't re-assign the variable.
+It's like a `let` keyword, but when you assign the variable once, you can't **re-assign** the variable.
+> The actual value of the variable is not immutable, you can still change the properties of the value
 
 ```javascript
 function a() {
@@ -152,8 +155,8 @@ like the above example, you can't re-assign the `const` variable. and `const` mu
 
 ```javascript
 function b() {
-  const x; // Error!
-  x = 100;
+  const y; // Error!
+  y = 100;
 }
 ```
 
@@ -164,8 +167,8 @@ You can use `const` keyword for variables that only needs one assignment. you ca
 ## Conclusion
 
 - `var`: Function Scoped, Hoisting
-- `let`: Block Scoped, No Hoisting
-- `const`: `let` + immutable
+- `let`: Block Scoped, Hoisting + Temporal Dead Zone
+- `const`: `let` + Immutable
 
 ## References
 
@@ -173,3 +176,4 @@ You can use `const` keyword for variables that only needs one assignment. you ca
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified)
