@@ -4,7 +4,7 @@ title: JavaScript - hasOwnProperty in for-in loops
 date: 2017-08-30 21:00:00 +0900
 ---
 
-In most programming languages, iterating over an object (dictionary or map) is natively supported. and JavaScript support it as well.
+In most programming languages, iterating over an object (dictionary or map) is natively supported. and JavaScript supports it as well.
 
 You've might seen iterating keys over object in JavaScript looks like this:
 
