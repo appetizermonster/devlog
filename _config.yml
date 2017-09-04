@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "https://appetizermonster.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://heejin.me" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
