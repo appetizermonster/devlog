@@ -11,4 +11,5 @@ Nowadays I’m aiming to create high quality software and struggling to get tech
 
 ### Work Experiences
 
+- Taskworld Korea, Senior Software Developer / 2017.09 ~
 - Appetizer Games, CTO / 2012.12 ~ 2017.07
